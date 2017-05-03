@@ -9,6 +9,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'checkstyle'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -24,6 +25,12 @@ repositories {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+checkstyle {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    checkstyleTest.enabled = false
+    toolVersion = '7.1.2'
+}
 
 test {
     testLogging {
