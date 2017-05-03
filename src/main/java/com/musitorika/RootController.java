@@ -4,12 +4,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class HelloController {
+public class RootController {
 
 
-  @RequestMapping("/hello")
+  @RequestMapping("/")
   public String index() {
-    return "Greetings from MUSITORIKA!";
+    return "Hello from MUSITORIKA!";
   }
 
 }

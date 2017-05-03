@@ -25,6 +25,12 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 dependencies {
     // tag::jetty[]
     compile("org.springframework.boot:spring-boot-starter-web") {
@@ -39,5 +45,4 @@ dependencies {
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
-
 
