@@ -13,4 +13,6 @@
 6. Start the server:					./gradlew.bat bootRun
 7. You can go to:			http://localhost:8080/ or http://localhost:8080/hello
 
+[![Build Status](https://travis-ci.org/SonsOfDataArt/musitorika.svg?branch=develop)](https://travis-ci.org/SonsOfDataArt/musitorika)
+
 [dataartlogo]: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRQh5yweUBfl57jZC81se0zyUaQ79Buf9dF2GSQQUy6tr7iUesY
