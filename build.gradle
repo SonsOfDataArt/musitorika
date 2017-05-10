@@ -31,6 +31,12 @@ checkstyle {
     toolVersion = '7.1.2'
 }
 
+checkstyle {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    checkstyleTest.enabled = false
+    toolVersion = '7.1.2'
+}
+
 test {
     testLogging {
         events "passed", "skipped", "failed"
