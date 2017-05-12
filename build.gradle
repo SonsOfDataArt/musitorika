@@ -17,7 +17,7 @@ buildscript {
 }
 
 jar {
-    baseName = 'musitorika-spring-boot'
+    baseName = 'musitorika'
     version =  '0.1.0'
 }
 
@@ -31,54 +31,23 @@ checkstyle {
     toolVersion = '7.1.2'
 }
 
-checkstyle {
-    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
-    checkstyleTest.enabled = false
-    toolVersion = '7.1.2'
-}
+dependencies {
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("com.h2database:h2")
+
+    // Test
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+ }
 
 test {
     testLogging {
         events "passed", "skipped", "failed"
     }
 }
-
-dependencies {
-
-   // compile("org.springframework.boot:spring-boot-starter-web")
-   // compile("com.h2database:h2")
-
-   /* compile 'org.springframework:spring-core',
-            'org.springframework.boot:spring-boot-starter-web',
-            'com.h2database:h2',
-            'org.springframework.boot:spring-boot-starter-data-jpa',
-            'org.springframework.boot:spring-boot-starter',
-            'org.springframework.data:spring-data-rest-webmvc'
-
-    testCompile("junit:junit")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    */
-
-    //Spring boot core
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.2.RELEASE'
-
-    //Conector for MySQL
-    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
-
-    //Jpa
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.2.RELEASE'
-
-    // H2
-    compile("com.h2database:h2")
-
-    //Templates with Thymeleaf
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-
-    //Junit Test
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-
- }
-
-
 
